@@ -1,0 +1,104 @@
+@import "../modules/variables";
+@import "../modules/classes";
+@import "../modules/mixins";
+@import "./breakpoints";
+
+body {
+  section {
+    height: 100vh;
+    background-color: rgb(35, 155, 230);
+    @include responsive(phone-land-md) {
+      height: 100%;
+    }
+    .container {
+      @extend %container;
+      padding-top: 180px;
+      @include responsive(phone-land-md) {
+        padding-top: 0;
+      }
+      .flex-block {
+        @include display(flex);
+        @include flex-property(space-between, center);
+        @include responsive(phone-land-md) {
+          flex-direction: column;
+        }
+        .wrapper-box {
+          &:nth-child(odd) {
+            margin: 20px 0; 
+          }
+          .title {
+            @include text-property(20px, $poppins, white);
+            font-weight: $medium;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+          .box {
+            width: 200px;
+            height: 180px;
+            background-color: transparent;
+            @include border(2px, solid, white);
+            border-radius: 2px;
+            position: relative;
+            .line {
+              width: 40px;
+              height: 2px;
+              background-color: white;
+              border-radius: 2px;
+              position: absolute;
+              top: 15px;
+              left: 15px;
+            }
+            .btn {
+              @extend %center;
+              width: 110px;
+              height: 30px;
+              background-color: black;
+              cursor: pointer;
+              @include text-property(15px, $poppins, white);
+              border: none;
+              outline: none;
+              @include transition(all, 350ms, ease);
+              &:hover {
+                background-color: orangered;
+              }
+            }
+            .white-btn {
+              background-color: white;
+              color: black;
+              border-radius: 20px;
+            }
+            .modal {
+              position: absolute;
+              left: 15px;
+              bottom: 0;
+              width: 165px;
+              height: 145px;
+              background-color: white;
+              display: none;
+              &.active {
+                display: block;
+              }
+              .close-btn {
+                @include text-property(20px, $poppins, black);
+                font-weight: $medium;
+                cursor: pointer;
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                @include transition(all, 350ms, ease);
+                &:hover {
+                  color: red;
+                }
+              }
+              .modal-title {
+                @include text-property(20px, $poppins, black);
+                font-weight: $medium;
+                @extend %center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

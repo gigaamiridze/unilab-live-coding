@@ -1,0 +1,34 @@
+@import "./variables";
+
+@mixin display($property) {
+  display: $property;
+}
+
+@mixin flex-property($horizontal, $vertical) {
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
+@mixin text-property($f-size, $f-family, $color) {
+  font-size: $f-size;
+  font-family: $f-family;
+  color: $color;
+}
+
+@mixin transition($property, $duration, $timingFunction) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timingFunction;
+}
+
+@mixin size($max, $width, $height) {
+  max-width: $max;
+  width: $width;
+  height: $height;
+}
+
+@mixin border($width, $style, $color) {
+  border-width: $width;
+  border-style: $style;
+  border-color: $color;
+}
