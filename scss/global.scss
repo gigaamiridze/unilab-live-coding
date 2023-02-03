@@ -1,7 +1,8 @@
-// Font
+// Importing fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-@import "./basic/reset";
+// Importing scss files
+@import "./base/reset";
 @import "./modules/variables";
 @import "./modules/classes";
 @import "./modules/mixins";
